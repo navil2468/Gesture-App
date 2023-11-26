@@ -19,8 +19,8 @@ class GestureAppWidget extends StatefulWidget{
 
 class _GestureAppWidgetState extends State<GestureAppWidget>{
   int gestureNum = 0;
-  List<String> gestures = ['images/Hand high five.png', 'images/Hand Fist Bump.png', 'images/Hand down low.jpeg','images/Hand shake hand.jpeg'];
-
+  List<String> gestures = ['images/Hand high five.png', 'images/Hand Fist Bump.png', 'images/Hand down low.png','images/Hand shake.png'];
+//https://pngtree.com/free-png-vectors/hand-palm
   void highFive(){
     setState((){
       gestureNum = 0;
@@ -59,14 +59,14 @@ class _GestureAppWidgetState extends State<GestureAppWidget>{
         onTap: highFive,
         onLongPress: fistBump,
         onDoubleTap: shakeHand,
-        onVerticalDragDown: (details) => downLow(),
+        onVerticalDragEnd: (details) => downLow(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               gestures[gestureNum],
-              height: 200,
-              width: 200
+              height: 300,
+              width: 300
           ),
           SizedBox(height:25),
           Text('Interact with the hand. Tap to high five. Long Press to Fist Bump. Double tap to shake hands. Swipe down for a down low.'),
