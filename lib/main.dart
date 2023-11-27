@@ -20,7 +20,6 @@ class GestureAppWidget extends StatefulWidget{
 class _GestureAppWidgetState extends State<GestureAppWidget>{
   int gestureNum = 0;
   List<String> gestures = ['images/Hand high five.png', 'images/Hand Fist Bump.png', 'images/Hand down low.png','images/Hand shake.png'];
-//https://pngtree.com/free-png-vectors/hand-palm
   void highFive(){
     setState((){
       gestureNum = 0;
@@ -54,6 +53,7 @@ class _GestureAppWidgetState extends State<GestureAppWidget>{
     return Scaffold(
       appBar: AppBar(
         title: Text('Hand Gestures'),
+        backgroundColor: Color.fromARGB(255, 251, 162, 38)
       ),
       body: GestureDetector(
         onTap: highFive,
@@ -69,7 +69,7 @@ class _GestureAppWidgetState extends State<GestureAppWidget>{
               width: 300
           ),
           SizedBox(height:25),
-          Text('Interact with the hand. Tap to high five. Long Press to Fist Bump. Double tap to shake hands. Swipe down for a down low.'),
+          Text(textAlign: TextAlign.center,'Interact with the hand. Tap to high five. Long Press to Fist Bump. Double tap to shake hands. Swipe down for a down low.', selectionColor: const Color.fromARGB(255, 0, 0, 0)),
           ]
           )
       )
